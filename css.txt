@@ -1,0 +1,55 @@
+CSS:-
+================================================================
+1. Type of css
+	1. Inline 
+		styles defines in the tag 
+		ex: <div style="color: red">
+	2. Internal
+		Styles defines in style tag
+		ex: 
+			<style>
+			div{
+				color: red
+			}
+			</style>
+	3. External
+		styles defines separte file
+		<link href="filepath" rel="stylesheet">
+		style.css
+		div{
+			color: red
+		}	
+
+2. Media queries
+	Media used for create the responsive design 
+	we have 5 different type design
+	1. xs
+	2. SM
+	3. MD
+	4. lg
+	5. Xl
+
+Syntax:- 
+	@media and max-width(320px) and min-width(480px){
+		.user-icon{
+		}
+	}
+
+3. Position properties
+	1. Relative
+	2. Absolute
+	3. Static
+	4. fixed 
+
+4. Selector 
+		id , class , tag
+ 
+5 Psuedo classes
+	HOVER , VISITED , ACTIVE ,LINK
+
+6. opacity :- 0 to 1
+	it gives range of visiblity blur to clear 
+
+7. Boot strap grid system  
+
+	

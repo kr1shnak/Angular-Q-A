@@ -1,0 +1,53 @@
+Html Interview questions:-
+===========================================================
+1. <!doctype html>
+A. Doctype defines what document we are using browser will understand we are using either Xml or Html. In html5 it is not mandatory.
+
+2. Display block and inline , flex and inline-block 
+A. block:- block level elements are takes things line by line with row level
+	inline:- Inline line elements display things sinle line 
+	inline-block:- it will also display things single line but  takes equal space
+	flex:- Flex default direction is row. we can change into column AS WELL
+
+3. local storage and session storage
+A. local storage data will be there even though close browser
+	syntax:- localStorage.getItem('name') and localStorage.setItem('name',"content")
+	sessionStorage:- when we close the browser data will be lost
+	syntax:- sessionStorage.getItem('name') and sessionStorage.setItem('name',"content")
+
+	we have to stringgy if we have to setting object
+
+4. Html5 features
+A.	1. Audio and video
+	2. Vector Graphices
+	3. Semantic tags
+	4. Geo location
+	5. Drag and drop
+	6. web workers
+
+5. semantic tags and non semantic tags
+	Semantic tags:-  tag inslef gives information and usage of tag
+	ex:- Header, footer , nav, aside, article, session
+	
+	non semantic:- it wont give any information about tag 
+
+	ex : span, sup, div 
+
+6. Html meta tags
+A:  <meta> tag defines metadata about an HTML document. Metadata is data (information) about data.
+
+7. Forms tags and attibutes
+A. tags:- Form, input texaera select button btngroup, label 
+	attributs:- type = text , number , range , checkbox, radio , button , sumbit , search, file 
+	mobile 
+	placeholder , class , id , name 
+
+8. Box model
+	Content - The content of the box, where text and images appear
+	Padding - Clears an area around the content. The padding is transparent
+	Border - A border that goes around the padding and content
+	Margin - Clears an area outside the border. The margin is transparent
+
+	
+	
+
