@@ -1,0 +1,276 @@
+Javascript
+============================
+1. Let, var , const
+A. Let : block scope,Cannot redclare and can reassign 
+	ex:- let x = 10;
+			let x= 20 // not possible 
+	var: Global Scope , Functional Scope can redclare and re assign 
+	const:- can not change the value
+
+2. callback:-
+	callback is function which waits for the response. once response comes it will be exceute
+	
+ex:- function getResponse(function1, function2){
+	
+	  } 
+
+		service.getResponse(res=>{
+			if(res){
+			}
+		
+		},err=>{
+			if(err){
+			}
+		})
+
+		serive.getResponse(getAuth(), getResponse());
+
+3. Promise:- 
+	promise use for handle asynchronus calls.
+
+Async / Await 
+	1. Promises at time handle only one event
+	2. we can not stop promises 
+	3. it has reslove and reject
+	4. Reslove is success and reject fails 
+
+	let userPromise = new Promise(Reslove , reject){
+	if(reslove){
+	}
+	else{
+	}
+	}
+
+
+	let a = user.getResponse();
+	let b = user.getBResoinse(a);
+	let c = user.getCResponse(b)
+
+	a.then(res=>{
+	}.catch(err){
+	}
+
+	async function user(){
+ 
+	let a = await user.getRespose();
+	let b = awiat user.getBresonse(a);
+	let c = awiat user.getCResponse(b)
+	}
+	
+
+Obserable:-
+
+	Obserable:- this also used for handle aysnchronus events
+	it is part of RXJS
+	it can handle multiple events
+	we can able stop obserables by using unsubscribe
+	by using subscribe we will able to access observables
+
+	userService.getuser().subscribe(res=>{
+		
+	},err=>{
+	
+	})
+
+How to bind observables
+=============================================
+$user = service.getUser();
+
+<div *ngFor= let item of (user | async)>
+
+=============================================================
+
+5 Communication B/w Components 
+
+1. @Input -> Parent to child 
+2. @Output -> Child parent it has emiiter
+3. Sevices -> It used to common for components by using the injector (DI)
+4. Subject-> Subject is part of RXJS // check the AddtoCart functionality 
+		userDetails = new Subject();
+		userDetails.next(data);
+
+		userDetails.subscribe(res=>{
+		
+		});
+5. Behaviour subject
+	subject and behaviour subject are same except default parameter is there for behaiour subject
+
+-------------------------------------------------------------------------
+
+6. Angular life cycle
+
+	NgOnChanges
+	NgOnInit
+	ngDoCheck
+	
+	ngAfterContentInit
+	ngAfterContentChecked
+
+	NgAfterViewInit
+	ngAfterViewChecked
+
+	ngDestory
+
+==========================================================================================
+
+7. Construtor and onInit
+	Construtor is first exceutable method in the componet
+	it has the all the DI (Dependency injection)
+	
+	constructor(private service: servicename){
+	}
+	
+	onInit : - this is life cycle method it will used for intialize angular 
+	NgOnInit we have to implements
+
+	export class userComopinent implements ngOnInit{
+	
+	}
+
+8. Sperad Operator
+	
+... this is symbols of sperad opertors
+
+	used to merge the two object or alter the object and create deep clone for objects 
+
+	let x = {a: "s"}
+	let y = { b : "a"}
+
+	let c = {...x , ...y}
+	c contains {a:"s", b: "a"}
+	this is applicables for arrays
+	[..a , ...b]
+
+	let x= {"name":"srinivas"}
+	y = x;
+	y.age = "20";
+
+	x // {name: srinivas , age: 20}
+
+	y ={...x}
+
+9. interface in  angular
+	interface used to define the type of the response
+
+	export Interface UserModel{
+	userName: string,
+	age: number,
+	email: string 
+	}
+
+	user.getResponse(res: UserModel=>{
+	})
+
+
+===================================================
+10. Content Projection 
+
+	1. <ng-content></ng-content>
+
+		ng content used for when we are projecting some content from child component and we have to 		declare ng-content tag where ever we want to put information in child component 
+
+	<app-user>
+	<h4>{{"welcome"}}</h4>
+	</app-user>
+
+
+	2. <ng-template></ng-template>
+
+		ngTemplate tag used it is else block where ngIf fails we want to show something template 			reference. template reference will be displayed ngIf fails 
+ 
+		<div *ngIf="user else nonUser">ssds</div>
+		<ng-template #nonUser>
+			sdfsd
+		</ng-template
+
+	3. <ng-container *ngIf="result.length > 0">
+		<div *ngFor="let item of result" >
+
+		</div>
+		</ng-container>
+
+		ng-container is wrapper for when  we are using two structural directives.
+		here it will helps eliminates extra we want to combine *ngIf and *ngFor.
+
+
+11. Explain about Routing.
+		
+    Routing is used for create single page applications
+	 Module: RouterModule, Routes 
+
+	 {
+		componet: componentName,
+		path: "",
+		canActivate: Service
+		data: {
+			name: productService
+		},
+		reslover: ApIService
+		}
+
+	Routes
+
+RouterModule.forRoot(routes)
+
+
+	<router-outlet></router-outlet>
+
+12. ActivateRoute	
+	 private route : ActivatedRoute
+
+	1. s.route.snapshot.data
+
+	2. this.route.snapshot.product
+	
+	3. router events
+		NavigationStart
+		NavigationEnd
+	
+	4  location
+		location.href 
+   5.  this.router.url();
+
+	6. this.route.navigate(['product'],{queryParams: {"exinc": 'hi'}})
+
+
+
+13. RXJS
+
+	 RXJS Libraray
+
+	 1. obserable
+	 2. pipe
+	 3. map, filter
+	 4. take(1)
+	 5. takeUntil()
+	 6. of
+	 7. toPromise()
+
+	let subs = []
+	subs.push(this.service.getAPIResponse().subscribe(res=>{
+
+	}))
+	
+	ngOnDestory(){
+	subs.forEach(item=>{
+		item.unscribe();
+		})
+	}
+
+	this.service.getApiResponse(pipe(filter(res.find(item=>item.name== srinivas)),takeUntil(),))
+
+	api response = {"user": "srinivas"}
+
+	let x = of(repsonse)
+	let y = toPromise(response)
+
+	y.then(res=>{
+	}).catch(err=>{
+	})
+	  
+ 
+	
+
+
+
+	

@@ -1,0 +1,192 @@
+Angular interview questions
+==============================================================
+1. sharing data b/w parent to child 
+
+A. Step 1:-  Import { Input } from angular/Core
+	Step 2:-  Declare Input values to the parent Component 
+				 Example
+					<child-componet [User]="UserInfo"></child-component>
+	Step 3:-  declare input decorator in the child
+				  @Input User: any;
+	Step 4:-  assign values in the parent
+				 UserInfo = srivas
+
+==================================================================
+2. Sharing Data b/w child to parent 
+	
+A  Step1: - Import { output , eventEmitter } from angular/core
+	Step2:-  Declare Child Componet in @output
+				@Output getUserInfo = EventEmitter<string>(); 
+				this.getUserInfo.emit("this is output function")
+	Step3:-  <child-component (getUserInfo)="emitInfo($event)"></child-component>
+	step4:-  emitinfo(outputinfo): void{
+					console.log(outputinfo);
+					// this is output function
+				}
+
+=====================================================================
+3. Interpolation 
+	user: stirng= "srinivas"
+
+	{{user}} = "srinivas"
+	{{"srinivas"}} = "srinivas"
+==========================================================================
+4. Binding the Html sting into html 
+	htmlsting: <h1>THis is angular</h1>
+	<div [innerHtml]="htmlString"></div>
+===================================================================
+5. Services
+	
+	services purpose sharing data b/w componets not having relation and it used for calling 	APIs.
+
+	import {UserService} form "./services/UserService"
+	
+	Construtor(Private service : UserService){
+	}
+
+	ngOnInit(){
+
+	this.service.getUserInfo();
+	}
+	 
+	export class UserService(){
+
+		getUserInfo(){
+			return info;
+		}	
+
+	}
+======================================================================
+6. Routing 
+
+	SPA: -single page application
+	
+	Import
+	--------------------
+	RouterModule 
+	Routes 
+
+	Create the Routes
+
+	const routes: Routes [
+		{
+			path: "/user",
+			Component: UserComponent
+		},
+		{
+			path: "/order",
+			Component: "orderComponent"
+		}
+
+	]
+---------------------------
+
+	imorts: [
+		RouterModule.forRoot(Routes)
+	]
+---------------------------------
+
+	<router-outlet></router-outlet>
+--------------------------------------------
+
+<a href="/user">user</a>
+<a href="" routerLink="user"></a>
+=================================================
+
+7:- Diffence b/w Ng-template, ng-container, ng-content 
+
+	<div *ngIf="user else notUser">user info</div>
+	<ng-template #nonUser>
+	 nonUser
+	</ng-template>
+	
+
+	<ng-container *ngIf="user.length > 0">
+		<div *ngFor="let item of users" >
+
+		</div>
+	</ng-container>
+
+
+	<ng-content>
+	</ng-content>
+
+	<child-component> THis child component </child-componet>
+
+
+	<ng-content></ng-content> // this child component
+
+=================================================================
+8. Constrctor and NgOnInit
+
+	constructor is the first loading function in the componet
+	used for define and inject  the services 
+	Construtor(Private service : UserService){
+		
+	}
+
+	ngOnInit:-
+	implemenation menthod which is life cycle method
+	it is not mandatory if you not declare
+	it uses for intilization of the components 
+		
+	ngOnInt(): void{
+	
+	}
+=================================================================
+
+9. Restful API calls 
+
+	4 methods: - get , put , post , delete
+
+	Imorts
+	HttpClientModule
+
+	Servies
+	HttpClient
+
+	Construtor(Private http : HttpClient){
+		
+	}
+	
+	getUserinfo():users{
+	
+	return this.http.get("https://localhost:3000/getUser")
+
+	}
+================================================================
+10. Life Cycle 
+
+	
+	there are 8 methods
+	
+	ngOnchanges(){
+		// previuous and current values 
+	}
+	ngOnInIt(){
+		intialize values 
+	}
+	NgDocheck(){
+
+		 checking after intializations
+	}
+	ngAfterContentInit(){
+		
+		Dom Intailaztion
+	}
+	ngAfterContentChecked(){
+
+		DOm checking 
+	}
+	ngAfterVIewInit(){
+
+		Html prepared
+	}
+	ngAfterViewChecked(){
+		Html checked
+	}
+	ngDestroy(){
+
+		Destory() variables 
+	}
+================================================
