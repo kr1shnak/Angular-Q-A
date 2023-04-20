@@ -1,17 +1,17 @@
 Javascript
 ============================
 1. Let, var , const
-A. Let : block scope,Cannot redclare and can reassign 
+A. Let : block scope,Cannot redclare, can reassign and must be declared before use
 	ex:- let x = 10;
 			let x= 20 // not possible 
 	var: Global Scope , Functional Scope can redclare and re assign 
 	const:- can not change the value
 
 2. callback:-
-	callback is function which waits for the response. once response comes it will be exceute
+	callback is function which waits for the response. once response comes it will exceute
 	
 ex:- function getResponse(function1, function2){
-	
+	 
 	  } 
 
 		service.getResponse(res=>{
@@ -26,17 +26,17 @@ ex:- function getResponse(function1, function2){
 		serive.getResponse(getAuth(), getResponse());
 
 3. Promise:- 
-	promise use for handle asynchronus calls.
+	promises are used for handle asynchronus calls.
 
 Async / Await 
-	1. Promises at time handle only one event
+	1. Promises at time handles only one event
 	2. we can not stop promises 
 	3. it has reslove and reject
 	4. Reslove is success and reject fails 
 
 	let userPromise = new Promise(Reslove , reject){
 	if(reslove){
-	}
+	}09:16 19-04-2023
 	else{
 	}
 	}
@@ -45,6 +45,7 @@ Async / Await
 	let a = user.getResponse();
 	let b = user.getBResoinse(a);
 	let c = user.getCResponse(b)
+
 
 	a.then(res=>{
 	}.catch(err){
@@ -66,6 +67,12 @@ Obserable:-
 	we can able stop obserables by using unsubscribe
 	by using subscribe we will able to access observables
 
+Observable is a feature that provides support for delivering messages between different parts of your single-page application.
+
+This feature is frequently used in Angular because it is responsible for handling multiple values, asynchronous programming in Javascript, and also event handling processes
+
+An observable is a function that creates an observer and attaches it to the source where values are expected from, for example, clicks, mouse events from a dom element or an Http request, etc.
+
 	userService.getuser().subscribe(res=>{
 		
 	},err=>{
@@ -83,7 +90,7 @@ $user = service.getUser();
 5 Communication B/w Components 
 
 1. @Input -> Parent to child 
-2. @Output -> Child parent it has emiiter
+2. @Output -> Child parent it has emitter
 3. Sevices -> It used to common for components by using the injector (DI)
 4. Subject-> Subject is part of RXJS // check the AddtoCart functionality 
 		userDetails = new Subject();
@@ -267,10 +274,28 @@ RouterModule.forRoot(routes)
 	y.then(res=>{
 	}).catch(err=>{
 	})
+=================================================================================================
 	  
+CLOSER
+
+DESTRUCTURING
+REST OPERATOR
+PROMISSES
+CALL BACK
+ARRAY METHODS
+JAVASCRIPT HASHTING 
+NON-BLOCKING, ASYNCRONUS, 
+JS IS FE AND CLINTSIDE
+OBJECT CONTAIN KEY VALU PAIRS
+DOM
+
+NO OF WAYS TO CREATE OBJECT
+		CONSTRUCTOR 
+		OBJECT 
+		LITERAL
+
  
-	
 
-
-
+ARRAY METHODS PUSH, SLICE, POP
+ARRAY iterations
 	
