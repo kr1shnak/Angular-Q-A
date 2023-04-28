@@ -137,7 +137,7 @@ A  Step1: - Import { output , eventEmitter } from angular/core
 
 9. Restful API calls 
 
-	4 methods: - get , put , post , delete
+	4 methods: - post, get , put ,   delete
 
 	Imorts
 	HttpClientModule
